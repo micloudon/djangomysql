@@ -1,0 +1,21 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+<br>
+<h2>Product</h2>
+<br>
+<ul class="list-group">
+    <li class="list-group-item"> Name:  {{ object.title }}</li>
+    <li class="list-group-item">Description: {% if object.description != None and object.description != '' %}
+        {{ object.description }}</li>
+{% else %}
+    Coming soon
+{% endif %}
+    <li class="list-group-item">Price: {{ object.price }}</li>
+</ul>
+<br>
+<a class="btn btn-outline-success mb-4" href="{% url 'products:product-update' object.id %}">update this product</a>
+
+<a class="btn btn-outline-danger mb-4" href="{% url 'products:product-delete' object.id %}">delete this product</a>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'pages/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<br>
+<h1>Update</h1>
+<form action="." method="POST"> 
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" class="btn btn-outline-success" value="Update"/>
+    <a class="btn btn-outline-danger" href='../'>Cancel</a>
+</form>
+<br>
+
+{% endblock %}

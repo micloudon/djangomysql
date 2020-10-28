@@ -1,0 +1,43 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+<br>
+<h2>Products:</h2>
+<br>
+<ul class="list-group"> 
+            {% for instance in object_list %}
+            <li class="list-group-item"><a class="btn btn-light" href="{{ instance.get_absolute_url }}">{{ instance.title }}</a></li>
+            {% endfor %}
+</ul>
+<br>
+
+<div class="pagination">
+
+
+    {% if object_list.has_previous %}
+
+        <a class="btn btn-outline-info mb-4 mr-2" href="?page=1">First</a>
+        <a class="btn btn-outline-info mb-4 mr-2" href="?page={{ object_list.previous_page_number }}">Previous</a>
+    {% endif %}
+
+    {% for num in object_list.paginator.page_range %}
+        {% if object_list.number == num %}
+
+            <a class="btn btn-info mb-4 mr-1" href="?page={{ num }}">{{ num }}</a>
+
+        {% elif num > object_list.number|add:'-3' and num < object_list.number|add:'3' %}
+
+            <a class="btn btn-outline-info mb-4 mr-1" href="?page={{ num }}">{{ num }}</a>
+
+        {% endif %}
+
+    {% endfor %}
+
+    {% if object_list.has_next %}
+        <a class="btn btn-outline-info mb-4 mr-1" href="?page={{ object_list.next_page_number }}">Next</a>
+        <a class="btn btn-outline-info mb-4" href="?page={{ object_list.paginator.num_pages }}">Last</a>
+    {% endif %}
+</div>
+
+
+{% endblock %}

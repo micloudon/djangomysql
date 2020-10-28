@@ -1,0 +1,38 @@
+
+nav {
+    background:#994842;   
+}
+
+body {
+    background: #deffe8;
+}
+
+nav a {
+    color: #deffe8 !important;
+}
+
+nav a:hover {
+    color: #7cc4b1 !important;
+}
+
+h1, h2 {
+    color: #5e2b28 !important;
+}
+
+.btn-light:hover {
+    background-color: #7cc4b1;
+}
+
+.btn-lg {
+    background-color: #994842;
+    border-color: #994842;
+}
+
+.btn-lg:hover {
+    background-color: #7cc4b1;
+    border-color: #7cc4b1;
+}
+
+.navbar-toggler {
+    background-color: #7cc4b1 !important
+}

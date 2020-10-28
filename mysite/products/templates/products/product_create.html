@@ -1,0 +1,12 @@
+{% extends 'pages/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<br>
+<h2 class="h2">Create:</h2>
+
+<form action="." method="POST"> 
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" class="btn btn-outline-success" value="Save"/>
+</form>
+{% endblock %}
