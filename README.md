@@ -8,5 +8,5 @@ This is mostly styled using BootStrap and little bit of CSS.
 This will be hosted on Amazon Web Services.
 
 The site and database are live on AWS, I have given the site a domain name and a secure HTTPS encryption:
-Here's the link:
-https://djangoproducts.tk/home/
+
+!Update I have taken this site off of AWS it is no longer hosted!
